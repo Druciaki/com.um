@@ -27,7 +27,7 @@ BOX_SIZE = 10
 try:
     FILES = (sys.argv[1],sys.argv[2])
 except IndexError:
-    print "python pypicmix.py <FILE.png> <ANOTHER_FILE.png> <block size (optional)>"
+    print("python pypicmix.py <FILE.png> <ANOTHER_FILE.png> <block size (optional)>")
 try:
     BOX_SIZE = int(sys.argv[3])
 except:
@@ -74,6 +74,7 @@ for y in range(0,mask.size[1]):
     yc +=1
     xc = 0
     last_line_color = current_color
+    mask.save("mask.png")
 
 # Apply the "chess" mask generated
 for y in range(0,mask.size[1]):
@@ -84,5 +85,5 @@ for y in range(0,mask.size[1]):
             new_img.putpixel((x,y), img2.getpixel((x,y)))
 
 new_img.save('output.png')
-print "output.png generated"
+print("output.png generated")
 
